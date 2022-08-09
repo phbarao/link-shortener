@@ -1,9 +1,7 @@
-import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
-import { nanoid } from 'nanoid';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function middleware(req: NextRequest, e: NextFetchEvent) {
+export async function middleware(req: NextRequest) {
   if (req.nextUrl.pathname.startsWith('/api/get-url/')) {
-    console.log('returning early');
     return;
   }
 
